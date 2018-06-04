@@ -1,0 +1,68 @@
+﻿@model IDSSProject.Models.Outcome
+
+
+
+<div class="rowResult">
+    <div style="margin-top: 2%; 
+                float: left; 
+                width: 10%;">
+        <img src="~/Images/Arrow.png" style="width: 35%; margin-top: 20%; margin-bottom:20%; " /><br/>
+        @Html.ActionLink("Back to Data Input", "InsertData", "Home", new { @class = "backButton" })
+    </div>
+    <div style="float: left;
+                width: 20%;  
+                border-left: 1px solid black;">
+        <h2 style="text-align: center;">Result</h2>
+        @if (Model.Success)
+        {
+            <img class="successImg" src="~/Images/Yes.png" runat="server" />
+            <br />
+            <label class="successLabel"> Yes, he will subscribe.</label>
+        }
+        else
+        {
+            <img class="successImg" src="~/Images/No.png" runat="server" />
+            <br />
+            <label class="successLabel">No, he won't subscribe.</label>
+        }
+    </div>
+    <div style="float: left;
+                width: 70%;
+                padding-left: 25px;
+                border-left: 1px solid black;">
+        <h2>Why?</h2>
+        <div>
+            <label class="influenceNumber">1.</label>
+            <label class="influenceType">@Model.FirstInfluenceType</label>
+            <img src=@Model.FirstImageLink runat="server" class="influenceImg" />
+            <label class="influenceValue">@Model.FirstInfluenceValue</label>
+        </div>
+        <div>
+            <label class="influenceNumber">2.</label>
+            <label class="influenceType">@Model.SecondInfluenceType</label>
+            <img src=@Model.SecondImageLink runat="server" class="influenceImg" />
+            <label class="influenceValue">@Model.SecondInfluenceValue</label>
+        </div>
+        <div>
+            <label class="influenceNumber">3.</label>
+            <label class="influenceType">@Model.ThirdInfluenceType</label>
+            <img src=@Model.ThirdImageLink runat="server" class="influenceImg" />
+            <label class="influenceValue">@Model.ThirdInfluenceValue</label>
+        </div>
+        <div>
+            <label class="influenceNumber">4.</label>
+            <label class="influenceType">@Model.FourthInfluenceType</label>
+            <img src=@Model.FourthImageLink runat="server" class="influenceImg" />
+            <label class="influenceValue">@Model.FourthInfluenceValue</label>
+        </div>
+        <div>
+            <label class="influenceNumber">5.</label>
+            <label class="influenceType">@Model.FifthInfluenceType</label>
+            <img src=@Model.FifthImageLink runat="server" class="influenceImg" />
+            <label class="influenceValue">@Model.FifthInfluenceValue</label>
+        </div>
+    </div>
+</div>
+
+
+

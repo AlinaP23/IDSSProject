@@ -1,0 +1,142 @@
+﻿@model IDSSProject.Models.Customer
+
+<div class="rowResult" style="margin-right: 5%;">
+    <form style="width:40%;
+                 float: left;
+                 border-right: 1px solid black;
+                 border-left: 1px solid black;
+                 margin-right: 3%;">
+        <fieldset style="text-align: right; margin-right: 7%;">
+            <legend>CLIENT DATA:</legend>
+            <label>Age (years):</label>
+            <input class="inputClientData"
+                   type="text"
+                   name="age"
+                   value="@Model.Age"
+                   step="1"
+                   min="18"
+                   max="100" /> <br />
+            <label>Job:</label>
+            <select class="inputClientData"
+                    name="job"
+                    value="@Model.Job">
+                <option value="abc">ABC</option>
+                <option value="def">DEF</option>
+            </select> <br />
+            <label>Marital status:</label>
+            <select class="inputClientData"
+                    name="maritalStatus"
+                    value="@Model.MaritalStatus">
+                <option value="abc">ABC</option>
+                <option value="def">DEF</option>
+            </select> <br />
+            <label>Level of education:</label>
+            <select class="inputClientData"
+                    name="education"
+                    value="@Model.Education">
+                <option value="abc">ABC</option>
+                <option value="def">DEF</option>
+            </select> <br />
+            <label>Avg. yearly balance (€):</label>
+            <input class="inputClientData"
+                   type="number"
+                   name="balance"
+                   value="@Model.YearlyBalance"
+                   min="0" /> <br />
+            <br />
+            <label>Does the client...</label><br />
+            <label class="checkboxInput">... have a credit in default?</label>
+            <input type="checkbox"
+                   value="@Model.Credit" /><br />
+            <label class="checkboxInput">... hold a housing loan?</label>
+            <input type="checkbox"
+                   value="@Model.HousingLoan" /><br />
+            <label class="checkboxInput">... hold a personal loan?</label>
+            <input type="checkbox"
+                   value="@Model.PersonalLoan" /><br />
+        </fieldset>
+    </form>
+    <form style="float: left; width: 40%; border-right: 1px solid black;">
+        <fieldset style="text-align: right; margin-right: 5%;">
+            <legend>INFO ON LAST CONTACT:</legend>
+            <label>Contact type:</label>
+            <select name="contactType"
+                    class="lastContactInfoInput"
+                    value="@Model.ContactType">
+                <option value="mobile">mobile</option>
+                <option value="telephone">telephone</option>
+            </select><br />
+            <label>Day of last contact:</label>
+            <input type="number"
+                   step="1"
+                   min="1"
+                   max="31"
+                   value="@Model.LastContactDay"
+                   class="lastContactInfoInput" /><br />
+            <label>Month of last contact:</label>
+            <select class="lastContactInfoInput"
+                    value="@Model.LastContactMonth">
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <option value="april">April</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="august">August</option>
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+                <option value="december">December</option>
+            </select><br />
+            <label>Duration:</label>
+            <input type="number"
+                   class="lastContactInfoInput"
+                   name="duration"
+                   min="0" />
+        </fieldset>
+        <br />
+        <fieldset style=" text-align: right; margin-right: 5%">
+            <legend>FURTHER INFORMATION:</legend>
+            <label style="margin-bottom:3%;">Number of contacts...</label><br />
+            <label >...during this campaign:</label>
+            <input class="furtherInfoInput"
+                   type="number"
+                   name="numberContactsThisCampaign"
+                   value="@Model.NumberOfContactsThis" 
+                   step="1"
+                   min="0"/><br />
+            <label>...prior to this campaign:</label>
+            <input class="furtherInfoInput"
+                   type="number"
+                   name="numberContactsPrior"
+                   value="@Model.NumberOfContactsPrior"
+                   step="1"
+                   min="0"/><br />
+            <label >Days since last contact:</label>
+            <input class="furtherInfoInput"
+                   type="number"
+                   name="daysSinceLastContact"
+                   value="@Model.DaysSinceLastContact"
+                   step="1"
+                   min="0"/><br />
+            <label class="checkboxInput">Was the last campaign successful?</label>
+            <input type="checkbox"
+                   name="outcomePreviousCampaign"
+                   value="@Model.OutcomePreviousCampaign" />
+        </fieldset>
+    </form>
+    <div style="float: left; width: 15%; margin-top: 10%;">
+        @using (Html.BeginForm("Result", "Home", FormMethod.Post))
+        {
+            <label style="font-size:120px;
+                           margin-bottom: -5%;
+                           margin-left: 35%;">?</label><br />
+            <input type="submit"
+                   value="Make a prediction!"
+                   style="margin-left: 15%;
+                           background-color: transparent;
+                           border: groove;" />
+            <!--   <img src="~/Images/Arrow.png" style="width: 30%; margin-top: 5%; margin-left: 55%; transform: rotate(180deg);" />-->
+        }
+    </div> 
+</div>

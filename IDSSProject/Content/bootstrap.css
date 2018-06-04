@@ -70,7 +70,7 @@ body {
     margin: auto;
 }
 .successLabel {
-    text-align: center;
+    margin-left: 10%;
     font-size: large;
     font-style: italic;
 }

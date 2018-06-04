@@ -24,6 +24,7 @@ namespace IDSSProject.Controllers
         [HttpPost]
         public ActionResult Result(Customer customer)
         {
+            //Mock - Implement Connection to Machine Learning Part here
             Outcome outcome = new Outcome();
             outcome.Success = true;
 

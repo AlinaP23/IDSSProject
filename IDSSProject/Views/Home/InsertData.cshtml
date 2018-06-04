@@ -15,7 +15,8 @@
                    value="@Model.Age"
                    step="1"
                    min="18"
-                   max="100" /> <br />
+                   max="100" 
+                   required/> <br />
             <label>Job:</label>
             <select class="inputClientData"
                     name="job"
@@ -42,7 +43,8 @@
                    type="number"
                    name="balance"
                    value="@Model.YearlyBalance"
-                   min="0" /> <br />
+                   min="0" 
+                   required/> <br />
             <br />
             <label>Does the client...</label><br />
             <label class="checkboxInput">... have a credit in default?</label>
@@ -72,7 +74,8 @@
                    min="1"
                    max="31"
                    value="@Model.LastContactDay"
-                   class="lastContactInfoInput" /><br />
+                   class="lastContactInfoInput" 
+                   required/><br />
             <label>Month of last contact:</label>
             <select class="lastContactInfoInput"
                     value="@Model.LastContactMonth">
@@ -92,7 +95,9 @@
             <input type="number"
                    class="lastContactInfoInput"
                    name="duration"
-                   min="0" />
+                   value="@Model.Duration"
+                   min="0" 
+                   required/>
         </fieldset>
         <br />
         <fieldset style=" text-align: right; margin-right: 5%">
@@ -104,21 +109,24 @@
                    name="numberContactsThisCampaign"
                    value="@Model.NumberOfContactsThis" 
                    step="1"
-                   min="0"/><br />
+                   min="0"
+                   required/><br />
             <label>...prior to this campaign:</label>
             <input class="furtherInfoInput"
                    type="number"
                    name="numberContactsPrior"
                    value="@Model.NumberOfContactsPrior"
                    step="1"
-                   min="0"/><br />
+                   min="0"
+                   required/><br />
             <label >Days since last contact:</label>
             <input class="furtherInfoInput"
                    type="number"
                    name="daysSinceLastContact"
                    value="@Model.DaysSinceLastContact"
                    step="1"
-                   min="0"/><br />
+                   min="0"
+                   required/><br />
             <label class="checkboxInput">Was the last campaign successful?</label>
             <input type="checkbox"
                    name="outcomePreviousCampaign"

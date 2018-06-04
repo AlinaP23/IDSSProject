@@ -12,12 +12,18 @@ namespace IDSSProject.Controllers
         public ActionResult Index()
         {
             Customer customer = new Customer();
+            customer.Credit = "unknown";
+            customer.HousingLoan = "unknown";
+            customer.PersonalLoan = "unknown";
             return View("InsertData", customer);
         }
 
         public ActionResult InsertData()
         {
             Customer customer = new Customer();
+            customer.Credit = "unknown";
+            customer.HousingLoan = "unknown";
+            customer.PersonalLoan = "unknown";
 
             return View(customer);
         }

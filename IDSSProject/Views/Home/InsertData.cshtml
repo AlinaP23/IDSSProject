@@ -15,47 +15,72 @@
                    value="@Model.Age"
                    step="1"
                    min="18"
-                   max="100" 
-                   required/> <br />
-            <label>Job:</label>
+                   max="100"
+                   required /> <br />
+            <label>Job type:</label>
             <select class="inputClientData"
                     name="job"
                     value="@Model.Job">
-                <option value="abc">ABC</option>
-                <option value="def">DEF</option>
+                <option value="admin.">Administration</option>
+                <option value="blue-collar">Blue Collar</option>
+                <option value="entrepreneur">Entrepreneur</option>
+                <option value="housemaid">Housemaid</option>
+                <option value="management">Management</option>
+                <option value="retired">Retired</option>
+                <option value="self-employed">Self-employed</option>
+                <option value="services">Services</option>
+                <option value="student">Student</option>
+                <option value="technician">Technician</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="unknown">Unknown</option>
             </select> <br />
             <label>Marital status:</label>
             <select class="inputClientData"
                     name="maritalStatus"
                     value="@Model.MaritalStatus">
-                <option value="abc">ABC</option>
-                <option value="def">DEF</option>
+                <option value="divorced">Divorced/Widowed</option>
+                <option value="married">Married</option>
+                <option value="single">Single</option>
+                <option value="unknown">Unknown</option>
             </select> <br />
             <label>Level of education:</label>
             <select class="inputClientData"
                     name="education"
                     value="@Model.Education">
-                <option value="abc">ABC</option>
-                <option value="def">DEF</option>
+                <option value="basic.4y">Basic - 4 years</option>
+                <option value="basic.6y">Basic - 6 years</option>
+                <option value="basic.9y">Basic - 9 years</option>
+                <option value="high.school">High school</option>
+                <option value="illiterate">Illiterate</option>
+                <option value="professional.course">Professional course</option>
+                <option value="university.degree">University degree</option>
+                <option value="unknown">Unknown</option>
             </select> <br />
             <label>Avg. yearly balance (€):</label>
             <input class="inputClientData"
                    type="number"
                    name="balance"
                    value="@Model.YearlyBalance"
-                   min="0" 
-                   required/> <br />
+                   min="0"
+                   required /> <br />
             <br />
-            <label>Does the client...</label><br />
+            <label style="margin-right: 10%;">Does the client...</label>
+            <label style="font-style: italic; margin-right: 1.4%;"> Y</label>
+            <label style="font-style: italic; margin-right: 1.5%;"> N</label>
+            <label style="font-style: italic; margin-right: -1%"> ?</label>
+            <br />
             <label class="checkboxInput">... have a credit in default?</label>
-            <input type="checkbox"
-                   value="@Model.Credit" /><br />
+            @Html.RadioButtonFor(model => model.Credit, "yes")
+            @Html.RadioButtonFor(model => model.Credit, "no")
+            @Html.RadioButtonFor(model => model.Credit, "unknown") 
             <label class="checkboxInput">... hold a housing loan?</label>
-            <input type="checkbox"
-                   value="@Model.HousingLoan" /><br />
+            @Html.RadioButtonFor(model => model.HousingLoan, "yes")
+            @Html.RadioButtonFor(model => model.HousingLoan, "no")
+            @Html.RadioButtonFor(model => model.HousingLoan, "unknown") 
             <label class="checkboxInput">... hold a personal loan?</label>
-            <input type="checkbox"
-                   value="@Model.PersonalLoan" /><br />
+            @Html.RadioButtonFor(model => model.PersonalLoan, "yes")
+            @Html.RadioButtonFor(model => model.PersonalLoan, "no")
+            @Html.RadioButtonFor(model => model.PersonalLoan, "unknown")
         </fieldset>
     </form>
     <form style="float: left; width: 40%; border-right: 1px solid black;">
@@ -65,31 +90,32 @@
             <select name="contactType"
                     class="lastContactInfoInput"
                     value="@Model.ContactType">
-                <option value="mobile">mobile</option>
-                <option value="telephone">telephone</option>
+                <option value="mobile">Cellular</option>
+                <option value="telephone">Telephone</option>
             </select><br />
             <label>Day of last contact:</label>
-            <input type="number"
-                   step="1"
-                   min="1"
-                   max="31"
-                   value="@Model.LastContactDay"
-                   class="lastContactInfoInput" 
-                   required/><br />
+            <select value="@Model.LastContactDay"
+                    class="lastContactInfoInput">
+                <option value="mon">Monday</option>
+                <option value="tue">Tuesday</option>
+                <option value="wed">Wednesday</option>
+                <option value="thu">Thursday</option>
+                <option value="fri">Friday</option>
+            </select><br />
             <label>Month of last contact:</label>
             <select class="lastContactInfoInput"
                     value="@Model.LastContactMonth">
-                <option value="january">January</option>
-                <option value="february">February</option>
-                <option value="march">March</option>
-                <option value="april">April</option>
-                <option value="june">June</option>
-                <option value="july">July</option>
-                <option value="august">August</option>
-                <option value="september">September</option>
-                <option value="october">October</option>
-                <option value="november">November</option>
-                <option value="december">December</option>
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                <option value="mar">March</option>
+                <option value="apr">April</option>
+                <option value="jun">June</option>
+                <option value="jul">July</option>
+                <option value="aug">August</option>
+                <option value="sep">September</option>
+                <option value="oct">October</option>
+                <option value="nov">November</option>
+                <option value="dec">December</option>
             </select><br />
             <label>Duration:</label>
             <input type="number"
@@ -103,14 +129,14 @@
         <fieldset style=" text-align: right; margin-right: 5%">
             <legend>FURTHER INFORMATION:</legend>
             <label style="margin-bottom:3%;">Number of contacts...</label><br />
-            <label >...during this campaign:</label>
+            <label>...during this campaign:</label>
             <input class="furtherInfoInput"
                    type="number"
                    name="numberContactsThisCampaign"
-                   value="@Model.NumberOfContactsThis" 
+                   value="@Model.NumberOfContactsThis"
                    step="1"
                    min="0"
-                   required/><br />
+                   required /><br />
             <label>...prior to this campaign:</label>
             <input class="furtherInfoInput"
                    type="number"
@@ -118,19 +144,22 @@
                    value="@Model.NumberOfContactsPrior"
                    step="1"
                    min="0"
-                   required/><br />
-            <label >Days since last contact:</label>
+                   required /><br />
+            <label>Days since last contact:</label>
             <input class="furtherInfoInput"
                    type="number"
                    name="daysSinceLastContact"
                    value="@Model.DaysSinceLastContact"
                    step="1"
                    min="0"
-                   required/><br />
-            <label class="checkboxInput">Was the last campaign successful?</label>
-            <input type="checkbox"
-                   name="outcomePreviousCampaign"
-                   value="@Model.OutcomePreviousCampaign" />
+                   required /><br />
+            <label class="checkboxInput">Last campaign's outcome?</label>
+            <select class="lastContactInfoInput"
+                    value="@Model.OutcomePreviousCampaign">
+                <option value="failure">Failure</option>
+                <option value="nonexistent">Nonexistent</option>
+                <option value="success">Success</option>
+            </select>
         </fieldset>
     </form>
     <div style="float: left; width: 15%; margin-top: 10%;">

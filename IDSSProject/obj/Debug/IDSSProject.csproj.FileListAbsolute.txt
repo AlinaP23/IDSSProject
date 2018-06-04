@@ -90,7 +90,6 @@ C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.csproj.CopyComplete
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.pdb
-C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.csprojAssemblyReference.cache
 C:\Users\D060248\Desktop\IDSS\PW3\IDSS-PW3\IDSSProject\IDSSProject\bin\ApplicationInsights.config
 C:\Users\D060248\Desktop\IDSS\PW3\IDSS-PW3\IDSSProject\IDSSProject\bin\IDSSProject.dll.config
 C:\Users\D060248\Desktop\IDSS\PW3\IDSS-PW3\IDSSProject\IDSSProject\bin\IDSSProject.dll

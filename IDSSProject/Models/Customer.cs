@@ -12,16 +12,16 @@ namespace IDSSProject.Models
         public string MaritalStatus { get; set; }
         public string Education { get; set; }
         public int YearlyBalance { get; set; }
-        public bool HousingLoan { get; set; }
-        public bool PersonalLoan { get; set; }
-        public bool Credit { get; set; }
+        public string HousingLoan { get; set; }
+        public string PersonalLoan { get; set; }
+        public string Credit { get; set; }
         public string ContactType { get; set; }
-        public int LastContactDay { get; set; }
-        public int LastContactMonth { get; set; }
+        public string LastContactDay { get; set; }
+        public string LastContactMonth { get; set; }
         public int Duration { get; set; }
         public int NumberOfContactsThis { get; set; }
         public int NumberOfContactsPrior { get; set; }
         public int DaysSinceLastContact { get; set; }
-        public bool OutcomePreviousCampaign { get; set; }
+        public string OutcomePreviousCampaign { get; set; }
     }
 }

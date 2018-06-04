@@ -18,6 +18,7 @@ namespace IDSSProject.Controllers
         public ActionResult InsertData()
         {
             Customer customer = new Customer();
+
             return View(customer);
         }
 

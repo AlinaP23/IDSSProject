@@ -88,17 +88,15 @@
                 <label class="checkboxInput">... have a credit in default?</label>
                 @Html.RadioButtonFor(model => model.Credit, "yes")
                 @Html.RadioButtonFor(model => model.Credit, "no")
-                @Html.RadioButtonFor(model => model.Credit, "unknown")
-                <br />
+                @Html.RadioButtonFor(model => model.Credit, "unknown")<br />
                 <label class="checkboxInput">... hold a housing loan?</label>
                 @Html.RadioButtonFor(model => model.HousingLoan, "yes")
                 @Html.RadioButtonFor(model => model.HousingLoan, "no")
-                @Html.RadioButtonFor(model => model.HousingLoan, "unknown")
-                <br />
+                @Html.RadioButtonFor(model => model.HousingLoan, "unknown")<br />
                 <label class="checkboxInput">... hold a personal loan?</label>
                 @Html.RadioButtonFor(model => model.PersonalLoan, "yes")
                 @Html.RadioButtonFor(model => model.PersonalLoan, "no")
-                @Html.RadioButtonFor(model => model.PersonalLoan, "unknown")
+                @Html.RadioButtonFor(model => model.PersonalLoan, "unknown")<br />
             </fieldset>
         </div>
         <div style="float: left; width: 40%; border-right: 1px solid black;">
@@ -114,8 +112,7 @@
                                           "value",
                                           "text",
                                           Model.ContactType ),
-                                      new {@class = "lastContactInfoInput", @style = "margin-right: -1.5%"})
-                <br />
+                                      new {@class = "lastContactInfoInput"})<br />
                 <label>Day of last contact:</label>
                 <input type="number"
                        value="@Model.LastContactDay"
@@ -142,15 +139,14 @@
                                           "value",
                                           "text",
                                           Model.LastContactMonth ),
-                                      new {@class = "lastContactInfoInput", @style = "margin-right: -1.5%" })
-                <br />
+                                      new {@class = "lastContactInfoInput"})<br />
                 <label>Duration (in sec):</label>
                 <input type="number"
                        class="lastContactInfoInput"
                        name="duration"
                        value="@Model.Duration"
                        min="0"
-                       required />
+                       required /><br />
             </fieldset>
             <br />
             <fieldset style=" text-align: right; margin-right: 5%">

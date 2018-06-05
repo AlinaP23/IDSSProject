@@ -16,7 +16,7 @@ namespace IDSSProject.Models
         public string PersonalLoan { get; set; }
         public string Credit { get; set; }
         public string ContactType { get; set; }
-        public string LastContactDay { get; set; }
+        public int LastContactDay { get; set; }
         public string LastContactMonth { get; set; }
         public int Duration { get; set; }
         public int NumberOfContactsThis { get; set; }

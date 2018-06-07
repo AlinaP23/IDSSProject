@@ -20,23 +20,35 @@ body {
     display: table;
     clear: both;
 }
+.labelClientData {
+    width: 63%;
+}
 .inputClientData {
-    width: 20%;
+    width: 30%;
     margin-top: 3%;
     margin-left: 5%;
 }
 .checkboxInput {
     margin-top: 3%;
     margin-right: 5%;
+    width: 70%;
 }
 .lastContactInfoInput{
     width: 30%;
     margin-top: 3%;
     margin-left: 5%;
 }
+.furtherInfoLabel{
+    width: 65%;
+}
 .furtherInfoInput {
-    width: 15%;
+    width: 25%;
     margin-bottom: 3%;
+    margin-left: 5%;
+}
+.inputContextData {
+    width: 25%;
+    margin-top: 3%;
     margin-left: 5%;
 }
 .influenceImg {

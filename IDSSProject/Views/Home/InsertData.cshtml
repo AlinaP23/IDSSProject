@@ -2,14 +2,14 @@
 @using (Html.BeginForm("Result", "Home", FormMethod.Post))
 {
     <div class="rowResult" style="margin-right: 5%;">
-        <div style="width:40%;
+        <div style="width:45%;
                  float: left;
                  border-right: 1px solid black;
                  border-left: 1px solid black;
                  margin-right: 3%;">
-            <fieldset style="text-align: right; margin-right: 7%;">
+            <fieldset style="text-align: left; margin-right: 7%; margin-left: 5%;">
                 <legend>CLIENT DATA:</legend>
-                <label>Age (years):</label>
+                <label class="labelClientData">Age (years):</label>
                 <input class="inputClientData"
                        type="text"
                        name="age"
@@ -18,7 +18,7 @@
                        min="18"
                        max="100"
                        required /> <br />
-                <label>Job type:</label>
+                <label class="labelClientData">Job type:</label>
                 @Html.DropDownListFor(model => model.Job,
                                       new SelectList(
                                           new List<Object>{
@@ -40,7 +40,7 @@
                                           Model.Job),
                                       new {@class = "inputClientData"})
                 <br />
-                <label>Marital status:</label>
+                <label class="labelClientData">Marital status:</label>
                 @Html.DropDownListFor(model => model.MaritalStatus,
                                       new SelectList(
                                           new List<Object>{
@@ -54,7 +54,7 @@
                                           Model.MaritalStatus),
                                       new {@class = "inputClientData"})
                 <br />
-                <label>Level of education:</label>
+                <label class="labelClientData">Level of education:</label>
                 @Html.DropDownListFor(model => model.Education,
                                       new SelectList(
                                           new List<Object>{
@@ -72,7 +72,7 @@
                                           Model.Education),
                                       new {@class = "inputClientData"})
                 <br />
-                <label>Avg. yearly balance (€):</label>
+                <label class="labelClientData">Avg. yearly balance (in €):</label>
                 <input class="inputClientData"
                        type="number"
                        name="balance"
@@ -80,7 +80,7 @@
                        min="0"
                        required /> <br />
                 <br />
-                <label style="margin-right: 10%;">Does the client...</label>
+                <label style="margin-right:5%; width:70%;">Does the client...</label>
                 <label style="font-style: italic; margin-right: 1.4%;"> Y</label>
                 <label style="font-style: italic; margin-right: 1.5%;"> N</label>
                 <label style="font-style: italic; margin-right: -1%"> ?</label>
@@ -98,11 +98,11 @@
                 @Html.RadioButtonFor(model => model.PersonalLoan, "no")
                 @Html.RadioButtonFor(model => model.PersonalLoan, "unknown")<br />
             </fieldset>
-        </div>
-        <div style="float: left; width: 40%; border-right: 1px solid black;">
-            <fieldset style="text-align: right; margin-right: 5%;">
+            <br/>
+            <br/>
+            <fieldset style="text-align: left; margin-right: 5%; margin-left: 5%;">
                 <legend>INFO ON LAST CONTACT:</legend>
-                <label>Contact type:</label>
+                <label class="labelClientData">Contact type:</label>
                 @Html.DropDownListFor(model => model.ContactType,
                                       new SelectList(
                                           new List<Object>{
@@ -113,14 +113,14 @@
                                           "text",
                                           Model.ContactType ),
                                       new {@class = "lastContactInfoInput"})<br />
-                <label>Day of last contact:</label>
+                <label class="labelClientData">Day of last contact:</label>
                 <input type="number"
                        value="@Model.LastContactDay"
                        class="lastContactInfoInput"
                        min="1"
                        max="31"
                        step="1" /><br />
-                <label>Month of last contact:</label>
+                <label class="labelClientData">Month of last contact:</label>
                 @Html.DropDownListFor(model => model.LastContactMonth,
                                       new SelectList(
                                           new List<Object>{
@@ -140,7 +140,7 @@
                                           "text",
                                           Model.LastContactMonth ),
                                       new {@class = "lastContactInfoInput"})<br />
-                <label>Duration (in sec):</label>
+                <label class="labelClientData">Duration (in sec):</label>
                 <input type="number"
                        class="lastContactInfoInput"
                        name="duration"
@@ -148,11 +148,48 @@
                        min="0"
                        required /><br />
             </fieldset>
+        </div>
+        <div style="float: left; width: 40%; border-right: 1px solid black;">
+            <fieldset style="text-align: left; margin-right: 5%;">
+                <legend>SOCIAL AND ECONOMIC CONTEXT:</legend>
+                <label class="furtherInfoLabel">Employment variation rate:</label>
+                <input class="inputContextData"
+                       type="number"
+                       value="@Model.EmploymentVariationRate"
+                       min="0"
+                       required /> <br />
+                <label class="furtherInfoLabel">Consumer price index:</label>
+                <input class="inputContextData"
+                       type="number"
+                       value="@Model.ConsumerPriceIndex"
+                       min="0"
+                       required /> <br />
+                <label class="furtherInfoLabel">Consumer confidence index:</label>
+                <input class="inputContextData"
+                       type="number"
+                       value="@Model.ConsumerConfidenceIndex"
+                       min="0"
+                       required /> <br />
+                <label class="furtherInfoLabel">Euribor 3 month rate:</label>
+                <input class="inputContextData"
+                       type="number"
+                       value="@Model.Euribor3Month"
+                       min="0"
+                       required /> <br />
+                <label class="furtherInfoLabel">Number of employees:</label>
+                <input class="inputContextData"
+                       type="number"
+                       value="@Model.NumberOfEmployees"
+                       min="0"
+                       step="1"
+                       required /> <br />
+            </fieldset>
             <br />
-            <fieldset style=" text-align: right; margin-right: 5%">
+            <br />
+            <fieldset style=" text-align: left; margin-right: 5%">
                 <legend>FURTHER INFORMATION:</legend>
                 <label style="margin-bottom:3%;">Number of contacts...</label><br />
-                <label>...during this campaign:</label>
+                <label class="furtherInfoLabel">...during this campaign:</label>
                 <input class="furtherInfoInput"
                        type="number"
                        name="numberContactsThisCampaign"
@@ -160,7 +197,7 @@
                        step="1"
                        min="0"
                        required /><br />
-                <label>...prior to this campaign:</label>
+                <label class="furtherInfoLabel">...prior to this campaign:</label>
                 <input class="furtherInfoInput"
                        type="number"
                        name="numberContactsPrior"
@@ -168,7 +205,7 @@
                        step="1"
                        min="0"
                        required /><br />
-                <label>Days since last contact:</label>
+                <label class="furtherInfoLabel">Days since last contact:</label>
                 <input class="furtherInfoInput"
                        type="number"
                        name="daysSinceLastContact"
@@ -176,7 +213,7 @@
                        step="1"
                        min="0"
                        required /><br />
-                <label style="margin-top:3%;">Last campaign's outcome?</label><br />
+                <label class="furtherInfoLabel">Last campaign's outcome?</label>
                 @Html.DropDownListFor(model => model.OutcomePreviousCampaign,
                                      new SelectList(
                                          new List<Object>{
@@ -187,20 +224,26 @@
                                          "value",
                                          "text",
                                          Model.OutcomePreviousCampaign ),
-                                     new {@class = "lastContactInfoInput"})
+                                     new {@class = "furtherInfoInput"})
             </fieldset>
         </div>
-        <div style="float: left; width: 15%; margin-top: 10%;">
-            <label style="font-size:120px;
-                           margin-bottom: -5%;
-                           margin-left: 35%;">?</label><br />
-            <input type="submit"
-                   value="Make a prediction!"
-                   style="margin-left: 15%;
-                           background-color: transparent;
-                           border: groove;" />
-            <!--   <img src="~/Images/Arrow.png" style="width: 30%; margin-top: 5%; margin-left: 55%; transform: rotate(180deg);" />-->
-           
-        </div>
+        <div style="float:left; width: 10%; margin-top: 10%; text-align: center;">
+            <div style="width: 190%; margin-left: 20%;">
+                <label style="
+                           font-size:120px;
+                           margin-left: -5%;
+                           margin-bottom: -5%;">
+                    ?
+                </label>
+            </div>    
+            
+                <input type="submit"
+                       value="Make a prediction!"
+                       style="background-color: transparent;
+                       width: 190%;
+                       margin-left: 20%;
+                       border: groove;" />
+                <!--   <img src="~/Images/Arrow.png" style="width: 30%; margin-top: 5%; margin-left: 55%; transform: rotate(180deg);" />-->
+            </div>
     </div>
 }

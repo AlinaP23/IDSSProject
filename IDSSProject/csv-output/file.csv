@@ -1,2 +1,2 @@
-age; job; marital; education; default; balance; housing; loan; contact; day; month; duration; campaign; pdays; previous; poutcome
-0;admin.;divorced;basic.4y;unknown;0;unknown;unknown;telephone;0;jan;0;0;0;0;failure;
+age; job; marital; education; default; balance; housing; loan; contact; day; month; duration; campaign; pdays; previous; poutcome; emp.var.rate; cons.price.idx; cons.conf.idx; euribor3m; nr.employed;
+0;admin.;divorced;basic.4y;unknown;0;unknown;unknown;telephone;0;jan;0;0;0;0;failure;0;0;0;0;

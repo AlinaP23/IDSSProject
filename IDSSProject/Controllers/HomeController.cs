@@ -61,7 +61,7 @@ namespace IDSSProject.Controllers
                               + customer.PersonalLoan + delimiter
                               + customer.ContactType + delimiter
                               + customer.LastContactMonth + delimiter
-                              + "mon" + delimiter
+                              + customer.LastContactDay + delimiter
                               //+ customer.Duration.ToString() + delimiter
                               + customer.NumberOfContactsThis + delimiter
                               + customer.DaysSinceLastContact.ToString() + delimiter
@@ -121,14 +121,14 @@ namespace IDSSProject.Controllers
             instances.setClassIndex(19);
             double[] values = cls.distributionForInstance(instances.instance(0));
             
-            if (values[0] > values[1]) {
+            if (values[0] < values[1]) {
                 outcome.Success = false;
             } else
             {
                 outcome.Success = true;
             }
             //get name of class value
-            String prediction = instances.classAttribute().value((int) values[1]);
+            //String prediction = instances.classAttribute().value((int) values[1]);
             //outcome.FirstInfluenceType = prediction;
 
             return outcome;

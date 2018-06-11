@@ -8,6 +8,12 @@ using System.Web.Mvc;
 using IDSSProject.Models;
 using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
+using weka;
+using weka.classifiers;
+using weka.core;
+using weka.core.converters;
+using libsvm;
+using weka.classifiers.functions;
 
 namespace IDSSProject.Controllers
 {
@@ -42,21 +48,21 @@ namespace IDSSProject.Controllers
         public ActionResult Result(Customer customer)
         {
             string filePath = @"C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\csv-output\file.csv";
-            string delimiter = ";";
+            string delimiter = ",";
 
-            string header = "age; job; marital; education; default; balance; housing; loan; contact; day; month; duration; campaign; pdays; previous; poutcome; emp.var.rate; cons.price.idx; cons.conf.idx; euribor3m; nr.employed;";
+            string header = "age, job, marital, education, default, housing, loan, contact, month, day_of_week, campaign, pdays, previous, poutcome, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed, y,";
             string clientData = customer.Age.ToString() + delimiter
                               + customer.Job + delimiter
                               + customer.MaritalStatus + delimiter
                               + customer.Education + delimiter
                               + customer.Credit + delimiter
-                              + customer.YearlyBalance.ToString() + delimiter
+                             // + customer.YearlyBalance.ToString() + delimiter
                               + customer.HousingLoan + delimiter
                               + customer.PersonalLoan + delimiter
                               + customer.ContactType + delimiter
-                              + customer.LastContactDay.ToString() + delimiter
                               + customer.LastContactMonth + delimiter
-                              + customer.Duration.ToString() + delimiter
+                              + "mon" + delimiter
+                              //+ customer.Duration.ToString() + delimiter
                               + customer.NumberOfContactsThis + delimiter
                               + customer.DaysSinceLastContact.ToString() + delimiter
                               + customer.NumberOfContactsPrior.ToString() + delimiter
@@ -64,18 +70,23 @@ namespace IDSSProject.Controllers
                               + customer.EmploymentVariationRate + delimiter
                               + customer.ConsumerPriceIndex + delimiter
                               + customer.Euribor3Month + delimiter
-                              + customer.NumberOfEmployees + delimiter;
+                              + customer.NumberOfEmployees + delimiter
+                              + "" + delimiter;
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(header);
             sb.AppendLine(clientData);
             System.IO.File.WriteAllText(filePath, sb.ToString());
 
-            //string htmlResponse = Post("localhost:8000/getPrediction/", "csv=" + sb.ToString());
+            CSVLoader loader = new CSVLoader();
+            loader.setSource(new java.io.File("C:/Users/D060248/Desktop/IDSS/PW3/IDSSProject/IDSSProject/csv-output/file.csv"));
+            Instances instances = loader.getDataSet();
+
+            Outcome outcome = MachineLearning(instances);
             
             //Mock - Implement Connection to Machine Learning Part here
-            Outcome outcome = new Outcome();
-            outcome.Success = true;
+            //Outcome outcome = new Outcome();
+            //outcome.Success = true;
 
             outcome.FirstInfluenceType = "Level of Education:";
             outcome.FirstInfluenceValue = "Bachelor";
@@ -100,40 +111,27 @@ namespace IDSSProject.Controllers
             return View(outcome);
         }
 
-        public static string Post(string url, object postData)
+        public Outcome MachineLearning(Instances instances)
         {
-            HttpWebRequest httpWReq = (HttpWebRequest)WebRequest.Create(url);
+            Outcome outcome = new Outcome();
 
-            BinaryFormatter bf = new BinaryFormatter();
-            MemoryStream ms = new MemoryStream();
-            bf.Serialize(ms, postData);
-
-            byte[] data = ms.ToArray();
-
-            httpWReq.Method = "POST";
-            httpWReq.ContentType = "application/x-www-form-urlencoded";
-            httpWReq.ContentLength = data.Length;
-
-            using (Stream newStream = httpWReq.GetRequestStream())
+            //load model 
+            LibSVM cls = (LibSVM) weka.core.SerializationHelper.read("C:/Users/D060248/Desktop/IDSS/PW3/IDSSProject/IDSSProject/MachineLearning/svmModel.model");
+            //predict outcome
+            instances.setClassIndex(19);
+            double[] values = cls.distributionForInstance(instances.instance(0));
+            
+            if (values[0] > values[1]) {
+                outcome.Success = false;
+            } else
             {
-                newStream.Write(data, 0, data.Length);
+                outcome.Success = true;
             }
+            //get name of class value
+            String prediction = instances.classAttribute().value((int) values[1]);
+            //outcome.FirstInfluenceType = prediction;
 
-            HttpWebResponse response = (HttpWebResponse)httpWReq.GetResponse();
-
-            Stream stream = response.GetResponseStream();
-
-            Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
-
-            StreamReader streamReader = new StreamReader(stream, encode);
-
-            string html = streamReader.ReadToEnd();
-
-            response.Close();
-
-            streamReader.Close();
-
-            return html;
+            return outcome;
         }
     }
 }

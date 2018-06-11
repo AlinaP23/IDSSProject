@@ -72,13 +72,13 @@
                                           Model.Education),
                                       new {@class = "inputClientData"})
                 <br />
-                <label class="labelClientData">Avg. yearly balance (in €):</label>
-                <input class="inputClientData"
-                       type="number"
-                       name="balance"
-                       value="@Model.YearlyBalance"
-                       min="0"
-                       required /> <br />
+                <!-- <label class="labelClientData">Avg. yearly balance (in €):</label>
+    <input class="inputClientData"
+           type="number"
+           name="balance"
+           value="@Model.YearlyBalance"
+           min="0"
+           required /> <br /> -->
                 <br />
                 <label style="margin-right:5%; width:70%;">Does the client...</label>
                 <label style="font-style: italic; margin-right: 1.4%;"> Y</label>
@@ -114,12 +114,19 @@
                                           Model.ContactType ),
                                       new {@class = "lastContactInfoInput"})<br />
                 <label class="labelClientData">Day of last contact:</label>
-                <input type="number"
-                       value="@Model.LastContactDay"
-                       class="lastContactInfoInput"
-                       min="1"
-                       max="31"
-                       step="1" /><br />
+                @Html.DropDownListFor(model => model.LastContactDay,
+                                      new SelectList(
+                                          new List<Object>{
+                                                new {value="mon", text = "Monday"},
+                                                new {value="tue", text = "Tuesday"},
+                                                new {value="wed", text = "Wednesday"},
+                                                new {value="thu", text = "Thursday"},
+                                                new {value="fri", text = "Friday"}
+                                          },
+                                          "value",
+                                          "text",
+                                          Model.LastContactDay ),
+                                      new {@class = "lastContactInfoInput"})<br />
                 <label class="labelClientData">Month of last contact:</label>
                 @Html.DropDownListFor(model => model.LastContactMonth,
                                       new SelectList(
@@ -128,6 +135,7 @@
                                                 new {value="feb", text = "February"},
                                                 new {value="mar", text = "March"},
                                                 new {value="apr", text = "April"},
+                                                new {value="may", text = "May"},
                                                 new {value="jun", text = "June"},
                                                 new {value="jul", text = "July"},
                                                 new {value="aug", text = "August"},
@@ -140,13 +148,13 @@
                                           "text",
                                           Model.LastContactMonth ),
                                       new {@class = "lastContactInfoInput"})<br />
-                <label class="labelClientData">Duration (in sec):</label>
-                <input type="number"
-                       class="lastContactInfoInput"
-                       name="duration"
-                       value="@Model.Duration"
-                       min="0"
-                       required /><br />
+                <!--    <label class="labelClientData">Duration (in sec):</label>
+         <input type="number"
+                class="lastContactInfoInput"
+                name="duration"
+                value="@Model.Duration"
+                min="0"
+                required /><br /> -->
             </fieldset>
         </div>
         <div style="float: left; width: 40%; border-right: 1px solid black;">
@@ -156,25 +164,21 @@
                 <input class="inputContextData"
                        type="number"
                        value="@Model.EmploymentVariationRate"
-                       min="0"
                        required /> <br />
                 <label class="furtherInfoLabel">Consumer price index:</label>
                 <input class="inputContextData"
                        type="number"
                        value="@Model.ConsumerPriceIndex"
-                       min="0"
                        required /> <br />
                 <label class="furtherInfoLabel">Consumer confidence index:</label>
                 <input class="inputContextData"
                        type="number"
                        value="@Model.ConsumerConfidenceIndex"
-                       min="0"
                        required /> <br />
                 <label class="furtherInfoLabel">Euribor 3 month rate:</label>
                 <input class="inputContextData"
                        type="number"
                        value="@Model.Euribor3Month"
-                       min="0"
                        required /> <br />
                 <label class="furtherInfoLabel">Number of employees:</label>
                 <input class="inputContextData"

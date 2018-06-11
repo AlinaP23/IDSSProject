@@ -1,4 +1,3 @@
-C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\csc.exe
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
@@ -102,6 +101,7 @@ C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\ApplicationInsight
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IDSSProject.dll.config
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IDSSProject.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IDSSProject.pdb
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\csc.exe
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\csc.exe.config
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\csc.rsp
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\csi.exe
@@ -144,6 +144,31 @@ C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\vbc.exe.con
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\vbc.rsp
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\Antlr3.Runtime.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Beans.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Charsets.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Corba.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Core.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Jdbc.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Management.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Media.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Misc.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Naming.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Remoting.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Security.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.SwingAWT.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Text.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Tools.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.Util.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.XML.API.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.XML.Bind.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.XML.Crypto.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.XML.Parse.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.XML.Transform.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.XML.WebServices.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.OpenJDK.XML.XPath.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.Reflection.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.Runtime.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\IKVM.Runtime.JNI.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -164,6 +189,7 @@ C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\System.Web.WebPage
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\System.Web.WebPages.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\System.Web.WebPages.Razor.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\WebGrease.dll
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\weka3.9.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\System.Web.Helpers.xml
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\System.Web.Mvc.xml
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\bin\System.Web.Optimization.xml
@@ -183,3 +209,4 @@ C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.csproj.CopyComplete
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.dll
 C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.pdb
+C:\Users\D060248\Desktop\IDSS\PW3\IDSSProject\IDSSProject\obj\Debug\IDSSProject.csprojAssemblyReference.cache

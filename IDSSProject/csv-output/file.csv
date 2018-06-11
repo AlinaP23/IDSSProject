@@ -1,2 +1,2 @@
-age, job, marital, education, default, housing, loan, contact, month, day_of_week, campaign, pdays, previous, poutcome, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed, y,
-31,unemployed,single,university.degree,no,yes,no,cellular,jul,0,0,3,0,success,0,0,0,0,,
+age, job, marital, education, default, housing, loan, contact, month, day_of_week, campaign, pdays, previous, poutcome, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed, y
+13,housemaid,single,basic.4y,unknown,unknown,yes,telephone,jan,0,0,0,0,failure,0,0,0,0, 

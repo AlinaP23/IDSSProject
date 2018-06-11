@@ -14,6 +14,7 @@ using weka.core;
 using weka.core.converters;
 using libsvm;
 using weka.classifiers.functions;
+using weka.classifiers.meta;
 
 namespace IDSSProject.Controllers
 {
@@ -71,7 +72,7 @@ namespace IDSSProject.Controllers
                               + customer.ConsumerPriceIndex + delimiter
                               + customer.Euribor3Month + delimiter
                               + customer.NumberOfEmployees + delimiter
-                              + "" + delimiter;
+                              + " "+ delimiter;
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(header);
@@ -116,19 +117,22 @@ namespace IDSSProject.Controllers
             Outcome outcome = new Outcome();
 
             //load model 
-            LibSVM cls = (LibSVM) weka.core.SerializationHelper.read("C:/Users/D060248/Desktop/IDSS/PW3/IDSSProject/IDSSProject/MachineLearning/svmModel.model");
+            StackingC cls = (StackingC) SerializationHelper.read("C:/Users/D060248/Desktop/IDSS/PW3/IDSSProject/IDSSProject/MachineLearning/ultimateIdss.model");
             //predict outcome
             instances.setClassIndex(19);
+            //double value = cls.classifyInstance(instances.instance(0));
             double[] values = cls.distributionForInstance(instances.instance(0));
-            
-            if (values[0] < values[1]) {
+
+            if (values[0] < values[1])
+            {
                 outcome.Success = false;
-            } else
+            }
+            else
             {
                 outcome.Success = true;
             }
             //get name of class value
-            //String prediction = instances.classAttribute().value((int) values[1]);
+            //String prediction = instances.classAttribute().value((int) value);
             //outcome.FirstInfluenceType = prediction;
 
             return outcome;

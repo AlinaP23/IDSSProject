@@ -46,6 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="bounce">
+      <HintPath>..\..\..\..\..\ikvm-7.2.4630.5\bin\bounce.dll</HintPath>
+    </Reference>
+    <Reference Include="Bounce.Framework, Version=0.7.6253.23484, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bounce.0.10.0\lib\net40\Bounce.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="IKVM.OpenJDK.Beans">
       <HintPath>..\..\..\..\..\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Beans.dll</HintPath>
     </Reference>

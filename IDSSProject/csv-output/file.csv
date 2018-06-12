@@ -1,2 +1,2 @@
 age, job, marital, education, default, housing, loan, contact, month, day_of_week, campaign, pdays, previous, poutcome, emp.var.rate, cons.price.idx, cons.conf.idx, euribor3m, nr.employed, y,
-0,admin.,divorced,basic.4y,unknown,unknown,unknown,telephone,jan,0,0,0,0,failure,0,0,0,0, ,
+0,admin.,divorced,basic.4y,unknown,unknown,unknown,telephone,jan,mon,4,3,3,failure,-34.55,-34.5,-34.5,-34.5, ,

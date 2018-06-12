@@ -89,25 +89,25 @@ namespace IDSSProject.Controllers
             //Outcome outcome = new Outcome();
             //outcome.Success = true;
 
-            outcome.FirstInfluenceType = "Level of Education:";
-            outcome.FirstInfluenceValue = "Bachelor";
-            outcome.FirstImageLink = "/Images/Influences/Bachelor.png";
+            outcome.FirstInfluenceType = "Number of Employees:";
+            outcome.FirstInfluenceValue = customer.NumberOfEmployees.ToString();
+            outcome.FirstImageLink = "/Images/Influences/Employee.png";
 
-            outcome.SecondInfluenceType = "Marital Status:";
-            outcome.SecondInfluenceValue = "Married";
-            outcome.SecondImageLink = "/Images/Influences/Married.png";
+            outcome.SecondInfluenceType = "Euribor:";
+            outcome.SecondInfluenceValue = customer.Euribor3Month.ToString();
+            outcome.SecondImageLink = "/Images/Influences/Euribor.png";
 
-            outcome.ThirdInfluenceType = "Housing Loan:";
-            outcome.ThirdInfluenceValue = "Existing";
-            outcome.ThirdImageLink = "/Images/Influences/HousingLoan.png";
+            outcome.ThirdInfluenceType = "Employment Variation Rate:";
+            outcome.ThirdInfluenceValue = customer.EmploymentVariationRate.ToString();
+            outcome.ThirdImageLink = "/Images/Influences/Job.png";
 
-            outcome.FourthInfluenceType = "Personal Loan:";
-            outcome.FourthInfluenceValue = "Existing";
-            outcome.FourthImageLink = "/Images/Influences/PersonalLoan.png";
+            outcome.FourthInfluenceType = "Days Since Last Contact:";
+            outcome.FourthInfluenceValue = customer.DaysSinceLastContact.ToString();
+            outcome.FourthImageLink = "/Images/Influences/NumberContacts.png";
 
-            outcome.FifthInfluenceType = "Contact Type:";
-            outcome.FifthInfluenceValue = "Mobile";
-            outcome.FifthImageLink = "/Images/Influences/Mobile.png";
+            outcome.FifthInfluenceType = "Outcome of Previous Campaign:";
+            outcome.FifthInfluenceValue = customer.OutcomePreviousCampaign;
+            outcome.FifthImageLink = "/Images/Influences/PrevOutcome.png";
 
             return View(outcome);
         }
@@ -117,7 +117,7 @@ namespace IDSSProject.Controllers
             Outcome outcome = new Outcome();
 
             //load model 
-            StackingC cls = (StackingC) SerializationHelper.read("C:/Users/D060248/Desktop/IDSS/PW3/IDSSProject/IDSSProject/MachineLearning/ultimateIdss.model");
+            LibSVM cls = (LibSVM) SerializationHelper.read("C:/Users/D060248/Desktop/IDSS/PW3/IDSSProject/IDSSProject/MachineLearning/svmModel.model");
             //predict outcome
             instances.setClassIndex(19);
             //double value = cls.classifyInstance(instances.instance(0));
@@ -131,9 +131,6 @@ namespace IDSSProject.Controllers
             {
                 outcome.Success = true;
             }
-            //get name of class value
-            //String prediction = instances.classAttribute().value((int) value);
-            //outcome.FirstInfluenceType = prediction;
 
             return outcome;
         }
